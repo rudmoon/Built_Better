@@ -1,2 +1,2 @@
-# Built_Better
-HTML,CSS(Reponsive),JS,JQuery
+# Practice_Built-Better
+ HTML,CSS(Responsive),JS
