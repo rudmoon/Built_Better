@@ -120,6 +120,9 @@ html,body {
     width: 100%;
     position: absolute;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #prevBtn, #nextBtn {
     position: absolute;
@@ -154,13 +157,19 @@ html,body {
     margin: 50px auto;
 }
 .slideShow__contact {
-    margin-top: 330px;
+    display: block;
+    width: 20%;
+    margin-top: 200px;
     border: none;
     color : white;
     background-color: rgb(149, 149, 34);
     font-size: 2em;
     border-radius: 8px;
     padding : 5px;
+    cursor: pointer;
+}
+.slideShow__contact.acttive {
+    display: none;
 }
 
 /* Services Part */
@@ -512,7 +521,8 @@ html,body {
 }
 #projectNextbtn, #projectPrevbtn {
     position: absolute;
-    top : 320px;
+    top : 50%;
+    transform: translateY(-50%);
     border: none;
     width: 50px;
     height: 50px;
@@ -528,10 +538,10 @@ html,body {
     transition: all 0.5s;
 }
 #projectNextbtn {
-    right : 8em;
+    right : 1em;
 }
 #projectPrevbtn {
-    left : 8em;
+    left : 0.2em;
 }
 
 /* Clients Part */
@@ -770,7 +780,7 @@ html,body {
 
 
 
-/* Reponsive Part */
+/* Responsive Part */
 @media screen and (max-width:1270px) {
     #nav {
         position: relative;
@@ -822,7 +832,7 @@ html,body {
         display: none;
     }
     .slideShow__contact {
-        margin-top: 50px;
+        font-size: 1em;
     }
     #projectNextbtn, #projectPrevbtn {
         display: none;
@@ -865,6 +875,9 @@ html,body {
     .clientsLi {
         height: 100%;
     }
+    .clientBox__right p {
+        font-size: 14px;
+    }
     .li__squares {
         position: absolute;
         top : 130px;
@@ -880,7 +893,7 @@ html,body {
         margin-top: 0;
     }
     .slideShow__contact {
-        margin-top: 30px;
+        width: 25%;
     }
     .services__boxes {
         flex-wrap: wrap;
@@ -966,6 +979,9 @@ html,body {
     .li__img1box p, .li__img2box p {
         display: none;
     }
+    .li__subtitle {
+        font-size: 14px;
+    }
     .li__squares {
         top : 150px;
     }
@@ -1002,5 +1018,12 @@ html,body {
     }
     .services__boxes>.box {
         width: 70%;
+    }
+    .slideShow__contact {
+        width: 40%;
+        margin-top: 100px;
+    }
+    .clientBox__right {
+        display: none;
     }
 }

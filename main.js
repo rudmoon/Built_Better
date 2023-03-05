@@ -1,3 +1,5 @@
+
+
 // Header영역 slideShow
 
 const slides = document.querySelector('.slides');
@@ -181,6 +183,7 @@ projectContainer.addEventListener('mouseover', () => {
     clearInterval(loopFunc);
 });
 
+
 projectContainer.addEventListener('mouseout',() => {
     loopFunc = setInterval(() => {
     
@@ -225,10 +228,17 @@ goNthslide(0);
 // 1. navBar
 const navbar = document.querySelector('#nav__bar');
 const navUL = document.querySelector('.nav__ul');
+let contactusBtn = document.querySelectorAll('.slideShow__contact');
 navbar.addEventListener('click', (ev) => {
     ev.preventDefault();
     navUL.classList.toggle('active');
 });
+navbar.addEventListener('click',function() {
+    for(let i=0; i<contactusBtn.length; i++) {
+        contactusBtn[i].classList.toggle('acttive');
+    }
+})
+
 
 // 2. Responsive media query
 if(matchMedia("screen and (max-width: 1270px)").matches){
@@ -266,11 +276,12 @@ navMenu.forEach((value,index) => {
     })
 });
 
+
 // 4. Making gotoTop arrow
 
 const gotoTop_btn = document.querySelector('#gotoTop--arrow');
 const docHeight = document.documentElement.scrollHeight;
-console.log(docHeight);
+// console.log(docHeight);
 
 window.addEventListener('scroll', () => {
     if(window.scrollY*4>docHeight) {
@@ -288,3 +299,5 @@ gotoTop_btn.addEventListener('click', (ev) => {
         behavior: 'smooth',
     })
 })
+
+
